@@ -13,3 +13,22 @@ print(largest_delegation_1992)
 
 #Largest delegation was the United states with 147 athletes, the second largest
 #delegation was the Unified Team (Former Soviet).
+
+#7.b.
+five_countries <- c("United States", "France", "Germany", "Russia", "China")
+
+Gold_Medals <- Olympics %>%
+  filter(country %in% five_countries) %>%
+  ggplot(aes(x = year, y = gold, color = country, group = country)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 1) +
+  labs(
+    title = "Gold Medals Earned Over Time",
+    subtitle = "*By United States, France, Germany, Russia, and China*",
+    x = "Year",
+    y = "Gold Medals Won",
+    color = "Country"
+  ) +
+  theme_minimal()
+
+print(Gold_Medals)
