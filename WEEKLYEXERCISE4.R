@@ -21,3 +21,16 @@ gold_each_country_won <- Olympics %>%
   group_by(country) %>%
   summarise(total_gold = sum(gold, na.rm = TRUE)) 
 
+print(gold_each_country_won)
+
+#c
+medals_given_out_by_year <- Olympics %>%
+  group_by(year) %>%
+  summarise(medals_awarded = sum(total.medals, na.rm = TRUE)) %>%
+  arrange(year)
+
+print(medals_given_out_by_year)
+
+
+
+
